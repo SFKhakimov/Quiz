@@ -1,13 +1,20 @@
 import React, { Component } from "react";
 import Layout from "./hoc/Layout/Layout";
-import Quiz from "../src/container/Quiz/Quiz";
+import Quiz from "./container/Quiz/Quiz";
+import Auth from "./container/Auth/Auth";
+import { Route } from "react-router-dom";
 
 export default class App extends Component {
   render() {
     return (
       <div>
         <Layout>
-          <Quiz />
+          <Route path="/" exact>
+            <Quiz />
+          </Route>
+          <Route path="/auth">
+            <Auth />
+          </Route>
         </Layout>
       </div>
     );
