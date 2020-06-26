@@ -1,0 +1,39 @@
+.FinishQuiz {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.FinishQuiz p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.FinishQuiz ul {
+  list-style: none;
+  padding: 0;
+}
+
+.FinishQuiz li {
+  margin-bottom: 5px;
+}
+
+.error {
+  display: inline-block;
+  width: 8px;
+  height: 12px;
+  margin: -3px 10px 3px;
+  border: solid red;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.success {
+  display: inline-block;
+  width: 8px;
+  height: 12px;
+  margin: -3px 10px 3px;
+  border: solid greenyellow;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
