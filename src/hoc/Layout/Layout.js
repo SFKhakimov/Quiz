@@ -20,7 +20,7 @@ export default class Layout extends Component {
   render() {
     return (
       <div className={classes.Layout}>
-        <Menu menuIsOpen={this.state.menuIsOpen} />
+        <Menu menuIsOpen={this.state.menuIsOpen} onClick={this.clickHandler} />
         {this.state.menuIsOpen ? <Overlay onClick={this.clickHandler} /> : null}
         <MenuToggle
           menuIsOpen={this.state.menuIsOpen}
