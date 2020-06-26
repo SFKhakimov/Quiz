@@ -1,0 +1,31 @@
+.Button {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  transition: linear 0.22s;
+  font-weight: bold;
+  outline: none;
+  color: #fff;
+}
+
+.Button:hover {
+  opacity: 0.8;
+}
+
+.Button:active {
+  box-shadow: 0 0 5px black;
+  transition: none;
+  opacity: 0.6;
+}
+
+.FinishQuiz_repeat {
+  margin-right: 10px;
+  background-color: #14b856;
+}
+
+.FinishQuiz_all-test {
+  background-color: #74a803;
+}
