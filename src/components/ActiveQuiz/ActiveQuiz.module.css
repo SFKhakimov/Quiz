@@ -1,0 +1,22 @@
+.ActiveQuiz {
+  display: flex;
+  flex-direction: column;
+}
+
+.ActiveQuiz div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ActiveQuiz p {
+  margin: 0;
+  font-size: 1rem;
+  padding-right: 9px;
+}
+
+.ActiveQuiz h2 {
+  margin: 0;
+  padding-bottom: 30px;
+  padding-left: 10px;
+  font-size: 1.3rem;
+}
