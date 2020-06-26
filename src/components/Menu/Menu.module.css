@@ -1,5 +1,6 @@
 .Menu {
   display: flex;
+  justify-content: center;
   width: 320px;
   background-color: #fff;
   height: 100%;
@@ -7,6 +8,28 @@
   left: -320px;
   transition: 0.22s linear;
   z-index: 20;
+  transition: 0.22s linear;
+}
+
+.Menu ul {
+  list-style: none;
+  padding: 20px 40px;
+  width: 100%;
+}
+
+.Menu ul li {
+  margin-bottom: 10px;
+}
+
+.Menu ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.4rem;
+}
+
+.Menu ul li a:hover,
+.active {
+  opacity: 0.7;
 }
 
 .open {
