@@ -1,0 +1,13 @@
+.MenuToggle {
+  position: absolute;
+  top: 60px;
+  left: 110px;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.22s linear;
+  z-index: 20;
+}
+
+.open {
+  left: 330px;
+}
