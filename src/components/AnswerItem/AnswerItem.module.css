@@ -1,0 +1,28 @@
+.AnswerItem {
+  border: 1px solid #fff;
+  padding: 7px;
+  border-radius: 100px;
+  padding-left: 13px;
+  cursor: pointer;
+  transition: color, 0.22s ease-in;
+  margin-bottom: 9px;
+}
+
+.AnswerItem:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.AnswerItem span {
+  font-size: 1.1rem;
+}
+
+.AnswerItem.success {
+  background: rgb(133, 189, 53);
+  color: #fff;
+}
+
+.AnswerItem.error {
+  background: rgb(231, 106, 106);
+  color: #fff;
+}
