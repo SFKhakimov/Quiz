@@ -12,7 +12,7 @@ export default class App extends Component {
       <div>
         <Layout>
           <Route path="/" exact component={QuizList} />
-          <Route path="/auth" component={Auth} />
+          {/* <Route path="/auth" component={Auth} /> */}
           <Route path="/create-quiz" component={QuizCreate} />
           <Route path="/quiz/:id" component={Quiz} />
         </Layout>
