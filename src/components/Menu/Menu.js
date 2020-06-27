@@ -17,9 +17,9 @@ const Menu = (props) => {
     <React.Fragment>
       <nav className={cls.join(" ")}>
         <ul>
-          {link.map((elem) => {
+          {link.map((elem, index) => {
             return (
-              <li>
+              <li key={elem + index}>
                 <NavLink
                   to={elem.to}
                   exact={elem.exact}
