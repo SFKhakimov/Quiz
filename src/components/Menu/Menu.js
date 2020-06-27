@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const link = [
   { to: "/", name: "Список тестов", exact: true },
-  { to: "/auth", name: "Авторизация", exact: false },
+  // { to: "/auth", name: "Авторизация", exact: false },
   { to: "/create-quiz", name: "Создать тест", exact: false },
 ];
 
