@@ -26,8 +26,8 @@ const FinishQuiz = (props) => {
         })}
       </ul>
       <div>
-        <Button style="FinishQuiz_repeat">Повторить</Button>
-        <Button style="FinishQuiz_all-test">Перейти ко всем тестам</Button>
+        <Button type="FinishQuiz_repeat">Повторить</Button>
+        <Button type="FinishQuiz_all-test">Перейти ко всем тестам</Button>
       </div>
     </div>
   );
