@@ -12,13 +12,11 @@
 }
 
 .Button:hover {
-  opacity: 0.8;
+  box-shadow: 0 0 3px black;
 }
 
 .Button:active {
-  box-shadow: 0 0 5px black;
-  transition: none;
-  opacity: 0.6;
+  box-shadow: inset 0 0 2px black;
 }
 
 .FinishQuiz_repeat {
@@ -28,4 +26,14 @@
 
 .FinishQuiz_all-test {
   background-color: #74a803;
+}
+
+.signin {
+  background-color: #7ddb1f;
+  margin-top: 10px;
+  margin-right: 5px;
+}
+
+.signup {
+  background-color: #1f80db;
 }
