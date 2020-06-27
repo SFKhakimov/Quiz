@@ -3,7 +3,7 @@ import classes from "./Menu.module.css";
 import { NavLink } from "react-router-dom";
 
 const link = [
-  { to: "/", name: "Активный тест", exact: true },
+  { to: "/", name: "Список тестов", exact: true },
   { to: "/auth", name: "Авторизация", exact: false },
   { to: "/create-quiz", name: "Создать тест", exact: false },
 ];
