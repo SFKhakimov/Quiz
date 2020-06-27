@@ -6,7 +6,7 @@ const Select = (props) => {
   return (
     <div className={cls.join(" ")}>
       <label>{props.label}</label>
-      <select onChange={props.onChange}>
+      <select onChange={props.onChange} value={props.selected}>
         {Object.keys(props.options).map((elem, index) => {
           const option = props.options[elem];
           return (
