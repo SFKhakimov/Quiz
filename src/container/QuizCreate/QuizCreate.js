@@ -11,7 +11,7 @@ export default class QiuizCreate extends Component {
   state = {
     quiz: [],
     formValid: false,
-    correctAnswer: null,
+    correctAnswer: 1,
     formElements: createFormQuesion(),
   };
 
