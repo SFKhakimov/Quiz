@@ -1,0 +1,10 @@
+.Select {
+  display: flex;
+  flex-direction: column;
+  margin-top: 14px;
+}
+
+.Select label {
+  font-size: 0.8rem;
+  padding-bottom: 4px;
+}

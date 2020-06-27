@@ -37,3 +37,15 @@
 .signup {
   background-color: #1f80db;
 }
+
+.createquiz {
+  background-color: #7ddb1f;
+  margin-top: 10px;
+  margin-right: 5px;
+}
+
+.addanswer {
+  background-color: #1f80db;
+  margin-top: 10px;
+  margin-right: 5px;
+}
