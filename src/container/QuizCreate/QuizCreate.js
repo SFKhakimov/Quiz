@@ -9,7 +9,7 @@ import axios from "axios";
 
 export default class QiuizCreate extends Component {
   state = {
-    quiz: [],
+    quizList: [],
     formValid: false,
     correctAnswer: 1,
     formElements: createFormQuesion(),
@@ -25,9 +25,19 @@ export default class QiuizCreate extends Component {
 
     form[inputName] = input;
 
+    let formValid = true;
+    Object.keys(form).forEach((elem) => {
+      const value = form[elem];
+      if (formValid) {
+        formValid = value.valid && formValid;
+      }
+      return formValid;
+    });
+
     this.setState(() => {
       return {
         formElements: form,
+        formValid,
       };
     });
   };
@@ -37,7 +47,7 @@ export default class QiuizCreate extends Component {
   };
 
   addAnswerHandler = () => {
-    const quiz = this.state.quiz.concat();
+    const quizList = this.state.quizList.concat();
     const {
       question,
       answer1,
@@ -56,12 +66,13 @@ export default class QiuizCreate extends Component {
         { options: answer4.value, id: 4 },
       ],
     };
-    quiz.push(creaeQuiz);
+    quizList.push(creaeQuiz);
     this.setState(() => {
       return {
-        quiz,
+        quizList,
         formElements: createFormQuesion(),
-        correctAnswer: null,
+        correctAnswer: 1,
+        formValid: false,
       };
     });
   };
@@ -79,13 +90,13 @@ export default class QiuizCreate extends Component {
     try {
       await axios.post(
         "https://quiz-39d4e.firebaseio.com/quiz.json",
-        this.state.quiz
+        this.state.quizList
       );
       this.setState(() => {
         return {
-          quiz: [],
+          quizList: [],
           formValid: false,
-          correctAnswer: null,
+          correctAnswer: 1,
           formElements: createFormQuesion(),
         };
       });
@@ -94,11 +105,49 @@ export default class QiuizCreate extends Component {
     }
   };
 
+  deleteHandler = (e, id) => {
+    const quizList = this.state.quizList.concat();
+    const newQuizList = quizList.filter((elem) => id !== elem.id);
+    this.setState(() => {
+      return {
+        quizList: newQuizList,
+      };
+    });
+  };
+
+  renderQuizList = () => {
+    const quiz = this.state.quizList.map((quiz) => {
+      return (
+        <div className={classes.Quiz} key={quiz.id}>
+          <p>Ваш вопрос: {quiz.question}</p>
+          <p>Правильный ответ: {quiz.correctAnswer}</p>
+          <ul>
+            {quiz.answer.map((answer) => {
+              return (
+                <li key={answer.id}>
+                  {answer.id}. {answer.options}
+                </li>
+              );
+            })}
+          </ul>
+          <Button
+            type="addanswer"
+            onClick={(e) => this.deleteHandler(e, quiz.id)}
+          >
+            Удалить
+          </Button>
+        </div>
+      );
+    });
+    return quiz;
+  };
+
   render() {
     const select = (
       <Select
         label="Выберете правильный ответ"
         onChange={this.selectChangeHandler}
+        selected={this.state.correctAnswer}
         options={{
           value1: 1,
           value2: 2,
@@ -128,14 +177,22 @@ export default class QiuizCreate extends Component {
               );
             })}
             {select}
-            <Button type="addanswer" onClick={this.addAnswerHandler}>
+            <Button
+              type="addanswer"
+              onClick={this.addAnswerHandler}
+              disabled={!this.state.formValid}
+            >
               Добавить вопрос
             </Button>
-            <Button type="createquiz" onClick={this.addQuiz}>
+            <Button
+              type="createquiz"
+              onClick={this.addQuiz}
+              disabled={!this.state.formValid}
+            >
               Создать тест
             </Button>
           </form>
-          <div></div>
+          <div>{this.state.quizList !== 0 ? this.renderQuizList() : null}</div>
         </div>
       </div>
     );

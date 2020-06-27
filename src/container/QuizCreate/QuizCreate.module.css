@@ -24,3 +24,28 @@
   background-color: darkgray;
   box-shadow: 0 0 4px #bababa;
 }
+
+.QiuizCreate p {
+  margin: 0;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.QiuizCreate ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+}
+
+.QiuizCreate li {
+  color: #fff;
+  padding-bottom: 5px;
+}
+
+.Quiz {
+  border: 1px solid #fff;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 6px;
+}
