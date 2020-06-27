@@ -11,11 +11,18 @@
   border: none;
   box-sizing: border-box;
   font-size: 1rem;
-  margin-bottom: 12px;
 }
 
 .Input label {
-  color: #fff;
+  color: #000;
   margin-bottom: 8px;
+  margin-top: 6px;
   font-size: 0.8rem;
+}
+
+.Input span {
+  margin: 0;
+  margin-top: 3px;
+  font-size: 0.7rem;
+  color: red;
 }
