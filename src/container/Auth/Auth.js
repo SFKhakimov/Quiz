@@ -3,6 +3,7 @@ import classes from "./Auth.module.css";
 import Input from "../../components/UI/Input/Input";
 import Button from "../../components/UI/Button/Button";
 import { checkValidate } from "../../utils/form/form";
+import axios from "axios";
 
 export default class Auth extends Component {
   state = {
@@ -66,6 +67,40 @@ export default class Auth extends Component {
     e.preventDefault();
   };
 
+  signInhHandler = async () => {
+    const auth = {
+      email: this.state.formsElements.email.value,
+      password: this.state.formsElements.password.value,
+      returnSecureToken: true,
+    };
+    try {
+      const res = await axios.post(
+        `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBI5QMOZZh8GDgEUT_9QNKUzTg-RaTAM8o`,
+        auth
+      );
+      console.log(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  signUpHandler = async () => {
+    const auth = {
+      email: this.state.formsElements.email.value,
+      password: this.state.formsElements.password.value,
+      returnSecureToken: true,
+    };
+    try {
+      const res = await axios.post(
+        `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBI5QMOZZh8GDgEUT_9QNKUzTg-RaTAM8o`,
+        auth
+      );
+      console.log(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   render() {
     return (
       <div className={classes.Auth}>
@@ -87,10 +122,18 @@ export default class Auth extends Component {
                 ></Input>
               );
             })}
-            <Button disabled={!this.state.formValid} type="signin">
+            <Button
+              disabled={!this.state.formValid}
+              type="signin"
+              onClick={this.signInhHandler}
+            >
               Авторизоваться
             </Button>
-            <Button disabled={!this.state.formValid} type="signup">
+            <Button
+              disabled={!this.state.formValid}
+              type="signup"
+              onClick={this.signUpHandler}
+            >
               Зарегистрироваться
             </Button>
           </form>
