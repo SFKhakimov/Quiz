@@ -1,7 +1,7 @@
 .Quiz {
   color: #fff;
   align-self: center;
-  margin-top: 140px;
+  margin-top: 200px;
   width: 600px;
   display: flex;
   flex-direction: column;
@@ -18,4 +18,5 @@
 .Quiz h1 {
   margin: 0;
   padding-bottom: 10px;
+  align-self: center;
 }
