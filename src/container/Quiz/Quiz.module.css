@@ -20,3 +20,16 @@
   padding-bottom: 10px;
   align-self: center;
 }
+
+@media screen and (max-width: 768px) {
+  .Quiz {
+    width: 460px;
+    padding: 8px;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .Quiz {
+    width: 300px;
+  }
+}
