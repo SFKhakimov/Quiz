@@ -11,3 +11,12 @@
 .open {
   left: 330px;
 }
+
+@media screen and (max-width: 468px) {
+  .MenuToggle {
+    left: 60px;
+  }
+  .open {
+    left: 250px;
+  }
+}
