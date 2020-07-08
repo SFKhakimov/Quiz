@@ -11,7 +11,7 @@
 - [validator](https://www.npmjs.com/package/validator)
 - [axios](https://www.npmjs.com/package/axios)
 
-Посмотреть можно по ссылке: https://quiz-39d4e.web.app/
+Посмотреть можно по ссылке: https://quiz-39d4e.web.app/  
 В новой версии подключил **Redux** и переписал проект с использованием хуков
 
 ## Планы
